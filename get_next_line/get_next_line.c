@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:18:36 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/08 09:30:43 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 14:45:24 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../cub3d.h"
+#include"../parsingcub3d/cub3d.h"
 
 int	get_back_slash_n(char *store_line)
 {

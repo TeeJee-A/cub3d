@@ -6,7 +6,7 @@
 #    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 23:19:39 by ataji             #+#    #+#              #
-#    Updated: 2023/01/09 22:12:09 by ataji            ###   ########.fr        #
+#    Updated: 2023/01/10 14:45:58 by ataji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,14 +25,14 @@ SRCS = libft/ft_split.c\
 	libft/ft_isdigit.c\
 	get_next_line/get_next_line.c\
 	get_next_line/get_next_line_utils.c\
-	cub3d.c\
-	cub3d_utils.c\
-	compass_colore.c\
-	counters.c\
-	parser.c\
-	checkzero.c\
-	parsetwopartsofmap.c\
-	main.c
+	parsingcub3d/cub3d.c\
+	parsingcub3d/cub3d_utils.c\
+	parsingcub3d/compass_colore.c\
+	parsingcub3d/counters.c\
+	parsingcub3d/parser.c\
+	parsingcub3d/checkzero.c\
+	parsingcub3d/parsetwopartsofmap.c\
+	parsingcub3d/main.c
 	
 OBJS = $(SRCS:%.c=%.o)
 

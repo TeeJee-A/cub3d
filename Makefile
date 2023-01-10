@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
+#    By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 23:19:39 by ataji             #+#    #+#              #
-#    Updated: 2023/01/10 14:50:39 by ataji            ###   ########.fr        #
+#    Updated: 2023/01/10 19:38:41 by aanjaimi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,17 +32,26 @@ SRCS = libft/ft_split.c\
 	parsingcub3d/parser.c\
 	parsingcub3d/checkzero.c\
 	parsingcub3d/parsetwopartsofmap.c\
-	parsingcub3d/main.c
+	raycasting/check_wall_utils.c\
+	raycasting/check_wall.c\
+	raycasting/handler.c\
+	raycasting/mini_map.c\
+	raycasting/mlx_win.c\
+	raycasting/ply_positions.c\
+	raycasting/render_utils.c\
+	raycasting/render.c\
+	raycasting/utils.c\
+	main.c
 	
 OBJS = $(SRCS:%.c=%.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $^
+	@$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $(NAME) $^ -fsanitize=address -g
 
 %.o : %.c $(INC)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ -fsanitize=address -g
 
 clean :
 	$(RM) $(OBJS)

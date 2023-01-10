@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsetwopartsofmap.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 22:10:20 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 11:10:15 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 20:01:14 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ bool	parsefirstofmap(t_data *data)
 		return (false);
 	while (data->x < data->countfirstlines)
 	{
-		while (data->firstlines[data->x] && data->firstlines[data->x][0] == '\n')
+		while (data->firstlines[data->x]
+			&& data->firstlines[data->x][0] == '\n')
 			data->x++;
 		if (data->x < data->countfirstlines)
 		{
@@ -56,9 +57,7 @@ bool	parsefirstofmap(t_data *data)
 		}
 		data->x++;
 	}
-	if (checkfirstofmap(data) == false)
-		return (false);
-	return (true);
+	return (checkfirstofmap(data));
 }
 
 bool	parsesecondofmap(t_data *data)

@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:05:19 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 13:10:30 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 13:13:01 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../parsing/cub3d.h"
+#include"../parsin/cub3d.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

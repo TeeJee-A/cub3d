@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:24 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:59:00 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:11:28 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsincub3d/cub3d.h"
+#include "../parsingcub3d/cub3d.h"
 
 int	ft_atoi(const char *str)
 {

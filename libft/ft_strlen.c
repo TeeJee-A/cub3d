@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:20:25 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:59:22 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:10:49 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsingcub3d/cub3d.h.h"
+#include "../parsingcub3d/cub3d.h"
 
 size_t	ft_strlen(char const *str)
 {

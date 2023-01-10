@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 20:18:36 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:58:52 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:12:02 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../parsincub3d/cub3d.h"
+#include"../parsingcub3d/cub3d.h"
 
 int	get_back_slash_n(char *store_line)
 {

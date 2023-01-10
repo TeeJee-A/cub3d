@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:17:38 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:59:22 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:10:41 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsingcub3d/cub3d.h.h"
+#include "../parsingcub3d/cub3d.h"
 
 char	*ft_strcpy(char *dest, const char *src)
 {

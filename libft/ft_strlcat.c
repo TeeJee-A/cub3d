@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:45:40 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:59:22 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:10:47 by aanjaimi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsingcub3d/cub3d.h.h"
+#include "../parsingcub3d/cub3d.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

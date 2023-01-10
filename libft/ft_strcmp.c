@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 23:10:48 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 13:10:30 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 14:59:22 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsing/cub3d.h"
+#include "../parsingcub3d/cub3d.h.h"
 
 int	ft_strcmp(const char *str1, const char *str2)
 {

@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 23:01:16 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/08 15:03:19 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 13:10:30 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../parsing/cub3d.h"
 
 int	count_words(const char *str, char c)
 {

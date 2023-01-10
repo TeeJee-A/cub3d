@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 14:26:16 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/07 15:34:22 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 13:10:30 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../parsing/cub3d.h"
 
 char	**set_wordsnewline(char const *s, char c)
 {

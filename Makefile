@@ -6,12 +6,12 @@
 #    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 23:19:39 by ataji             #+#    #+#              #
-#    Updated: 2023/01/09 22:12:09 by ataji            ###   ########.fr        #
+#    Updated: 2023/01/10 13:11:00 by ataji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3d
-INC = cub3d.h
+INC = cub3d/cub3d.h
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRCS = libft/ft_split.c\
@@ -25,18 +25,18 @@ SRCS = libft/ft_split.c\
 	libft/ft_isdigit.c\
 	get_next_line/get_next_line.c\
 	get_next_line/get_next_line_utils.c\
-	cub3d.c\
-	cub3d_utils.c\
-	compass_colore.c\
-	counters.c\
-	parser.c\
-	checkzero.c\
-	parsetwopartsofmap.c\
-	main.c
+	parsing/cub3d.c\
+	parsing/cub3d_utils.c\
+	parsing/compass_colore.c\
+	parsing/counters.c\
+	parsing/parser.c\
+	parsing/checkzero.c\
+	parsing/parsetwopartsofmap.c\
+	parsing/main.c
 	
 OBJS = $(SRCS:%.c=%.o)
 
-all : $(NAME) clean
+all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CC) $(CFLAGS) -o $(NAME) $^

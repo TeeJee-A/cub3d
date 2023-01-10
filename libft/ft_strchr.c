@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 13:14:24 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:51:07 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 14:59:22 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsin/cub3d.h"
+#include "../parsingcub3d/cub3d.h.h"
 
 char	*ft_strchr(const char *s, int c)
 {

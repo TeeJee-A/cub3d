@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:24 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:50:57 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 14:59:00 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsin/cub3d.h"
+#include "../parsincub3d/cub3d.h"
 
 int	ft_atoi(const char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 17:47:13 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 14:50:59 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/10 14:59:03 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../parsin/cub3d.h"
+#include "../parsincub3d/cub3d.h"
 
 int	ft_isdigit(int c)
 {

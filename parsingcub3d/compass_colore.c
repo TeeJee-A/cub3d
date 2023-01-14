@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 12:55:37 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 10:42:42 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/12 13:49:27 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ bool	checkrgb(t_data *data, char **elements)
 {
 	if (!ft_strcmp(elements[0], "F"))
 	{
-		if (checkcolore(elements) == false)
+		if (checkcoloref(data, elements) == false)
 			return (false);
 		data->f++;
 	}
 	if (!ft_strcmp(elements[0], "C"))
 	{
-		if (checkcolore(elements) == false)
+		if (checkcolorec(data, elements) == false)
 			return (false);
 		data->c++;
 	}
@@ -105,9 +105,8 @@ bool	checknumbers(char **colors)
 	return (true);
 }
 
-bool	checkcolore(char **elements)
+bool	checkcoloref(t_data *data, char **elements)
 {
-	char	**colors;
 	int		i;
 	int		countcomma;
 
@@ -117,13 +116,23 @@ bool	checkcolore(char **elements)
 		if (elements[1][i] == ',')
 			countcomma++;
 	if (countcomma != 2)
-	{
-		printf(ERRSYNCOLOR);
-		return (false);
-	}
-	colors = ft_split(elements[1], ',');
-	if (checknumbers(colors) == false)
-		return (false);
-	ft_free(colors);
-	return (true);
+		return (printf(ERRSYNCOLOR), false);
+	data->floor = ft_split(elements[1], ',');
+	return (checknumbers(data->floor));
+}
+
+bool	checkcolorec(t_data *data, char **elements)
+{
+	int		i;
+	int		countcomma;
+
+	countcomma = 0;
+	i = -1;
+	while (elements[1] && elements[1][++i])
+		if (elements[1][i] == ',')
+			countcomma++;
+	if (countcomma != 2)
+		return (printf(ERRSYNCOLOR), false);
+	data->ceil = ft_split(elements[1], ',');
+	return (checknumbers(data->ceil));
 }

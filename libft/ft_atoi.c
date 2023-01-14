@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:39:24 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/10 15:11:28 by aanjaimi         ###   ########.fr       */
+/*   Updated: 2023/01/12 12:04:11 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ int	ft_atoi(const char *str)
 		signe *= -1;
 		i++;
 	}
-	if (str[i] < '0' || str[i] > '9')
-		return (-1);
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		n = (n * 10) + (str[i] - '0');
 		i++;
 	}
+	if ((str[i] < '0' || str[i] > '9') && str[i] != '\0')
+		return (-1);
 	return (n * signe);
 }

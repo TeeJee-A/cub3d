@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 22:10:20 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/11 14:08:38 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/11 22:48:11 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,14 @@ void	initdirectioncolor(t_data *data)
 
 bool	checkfirstofmap(t_data *data)
 {
-	if (data->we != 1 || data->no != 1 || data->ea != 1 || data->so != 1
-		|| data->f != 1 || data->c != 1 || data->counter != 6)
-		return (printf(ERRSYNMAP), false);
+	if (data->we < 1 || data->no < 1 || data->ea < 1 || data->so < 1
+		|| data->f < 1 || data->c < 1)
+		return (printf(MISSKEY), false);
+	if (data->we > 1 || data->no > 1 || data->ea > 1 || data->so > 1
+		|| data->f > 1 || data->c > 1)
+		return (printf(ERRKEYS), false);
+	if (data->counter > 6)
+		return (printf(ERRINTR), false);
 	return (true);
 }
 

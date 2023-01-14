@@ -6,13 +6,13 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 10:32:08 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/09 13:44:47 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/11 18:00:15 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-char	*returnline(char *str, size_t len)
+char	*returnline_aa(char *str, size_t len)
 {
 	char	*ret;
 	int		i;
@@ -51,7 +51,7 @@ void	addspaces(t_data *data)
 		len = ft_strlen(data->secondlines[i]);
 		if (len < data->biglength)
 		{
-			data->secondlines[i] = returnline(data->secondlines[i],
+			data->secondlines[i] = returnline_aa(data->secondlines[i],
 					data->biglength - len);
 		}
 		i++;

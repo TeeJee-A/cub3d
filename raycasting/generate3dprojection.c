@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 13:43:34 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/15 19:09:38 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/15 20:47:11 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	calculatey(t_data *data, int j)
 	int	y;
 
 	y = (j - data->walltoppixel)
-		* data->textureimg[EA]->heigth / data->wallstripheight;
+		* data->textureimg[EA].heigth / data->wallstripheight;
 	return (y);
 }
 
@@ -73,11 +73,10 @@ void	generate3dprojection(t_data *data)
 		while (++j < data->wallbottompixel)
 		{
 			data->texturey = calculatey(data, j);
-			color = *(int *)(data->textureimg[EA]->addr
-					+ (data->texturey % data->textureimg[EA]->heigth)
-					* data->textureimg[EA]->line_length
-					+ (data->texturex % data->textureimg[EA]->width)
-					* data->textureimg[EA]->bits_per_pixel / 8);
+			color = *(int *)(data->textureimg[EA].addr
+					+ ((data->texturey % data->textureimg[EA].heigth) * data->textureimg[EA].line_length
+					+ (data->texturex % data->textureimg[EA].width)
+					* data->textureimg[EA].bits_per_pixel / 8));
 			my_mlx_pixel_put_map(data, data->texturex, data->texturey, color);
 		}
 		j = data->wallbottompixel - 1;

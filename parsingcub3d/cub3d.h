@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:28:32 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/15 19:10:14 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/15 20:46:26 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ typedef struct s_var
 	int		win_width_mini;
 	void	*mlx;
 	void	*win;
-	t_img	img_mini;	
+	t_img	img_mini;
 	t_img	img_map;
 }	t_var;
 
@@ -208,7 +208,7 @@ typedef struct s_data
 	int				path_img_heigth;
 	long long		mouse;
 	char			*texture[4];
-	t_img			*textureimg[4];
+	t_img			textureimg[4];
 }t_data;
 
 /**************************** libft ****************************/

@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 23:31:16 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/11 23:32:15 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/15 13:23:20 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	second(t_data *data)
 
 bool	dividingmap(t_data *data)
 {
-	data->countsecondlines = data->countlines - data->countfirstlines;
 	data->firstlines = (char **)malloc(sizeof(char *) \
 		* (data->countfirstlines + 1));
 	data->secondlines = (char **)malloc(sizeof(char *) \

@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:51:16 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/11 22:55:52 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/14 23:50:37 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	countlinesfirstmap(t_data *data)
 
 	i = -1;
 	counter = 0;
-	counter = 0;
 	while (data->allmap[++i])
 	{
 		j = -1;
@@ -58,6 +57,22 @@ int	countlinesfirstmap(t_data *data)
 			if (data->allmap[i][j + 1] == '\0')
 				counter++;
 		}
+	}
+	return (counter);
+}
+
+int	countlinessecondmap(t_data *data)
+{
+	int	i;
+	int	counter;
+
+	i = data->countfirstlines - 1;
+	counter = 0;
+	while (data->allmap[++i])
+	{
+		if (data->allmap[i][0] == '\n')
+			break ;
+		counter++;
 	}
 	return (counter);
 }

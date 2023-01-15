@@ -6,11 +6,39 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 22:49:13 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/13 17:10:21 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/15 19:20:49 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parsingcub3d/cub3d.h"
+
+void	createtextureimg(t_data *data)
+{
+	data->textureimg[EA]->img = mlx_xpm_file_to_image(data->var.mlx, \
+		data->texture[EA], &data->textureimg[EA]->width, \
+			&data->textureimg[EA]->heigth);
+	data->textureimg[WE]->img = mlx_xpm_file_to_image(data->var.mlx, \
+		data->texture[WE], &data->textureimg[WE]->width, \
+			&data->textureimg[WE]->heigth);
+	data->textureimg[SO]->img = mlx_xpm_file_to_image(data->var.mlx, \
+		data->texture[SO], &data->textureimg[SO]->width, \
+			&data->textureimg[SO]->heigth);
+	data->textureimg[NO]->img = mlx_xpm_file_to_image(data->var.mlx, \
+		data->texture[NO], &data->textureimg[NO]->width, \
+			&data->textureimg[NO]->heigth);
+	data->textureimg[EA]->addr = mlx_get_data_addr(data->textureimg[EA]->img, \
+		&data->textureimg[EA]->bits_per_pixel, \
+			&data->textureimg[EA]->line_length, &data->textureimg[EA]->endian);
+	data->textureimg[WE]->addr = mlx_get_data_addr(data->textureimg[WE]->img, \
+		&data->textureimg[WE]->bits_per_pixel, \
+			&data->textureimg[WE]->line_length, &data->textureimg[WE]->endian);
+	data->textureimg[SO]->addr = mlx_get_data_addr(data->textureimg[SO]->img, \
+		&data->textureimg[SO]->bits_per_pixel, \
+			&data->textureimg[SO]->line_length, &data->textureimg[SO]->endian);
+	data->textureimg[NO]->addr = mlx_get_data_addr(data->textureimg[NO]->img, \
+		&data->textureimg[NO]->bits_per_pixel, \
+			&data->textureimg[NO]->line_length, &data->textureimg[NO]->endian);
+}
 
 void	set_images(t_data *data)
 {

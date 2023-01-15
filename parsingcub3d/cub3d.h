@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:28:32 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/14 15:04:21 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/15 19:10:14 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,14 @@
 # define WALL_STR_WIDTH 1
 # define WIDTH 1920
 # define HEIGHT 1080
+
+enum
+{
+	EA,
+	WE,
+	SO,
+	NO
+};
 
 typedef struct s_rays
 {
@@ -118,6 +126,8 @@ typedef struct s_img
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		width;
+	int		heigth;
 }	t_img;
 
 typedef struct s_var
@@ -142,6 +152,8 @@ typedef struct s_var
 
 typedef struct s_data
 {
+	int				texturex;
+	int				texturey;
 	double			distanceprojplane;
 	double			projectionwallheight;
 	int				wallstripheight;
@@ -196,6 +208,7 @@ typedef struct s_data
 	int				path_img_heigth;
 	long long		mouse;
 	char			*texture[4];
+	t_img			*textureimg[4];
 }t_data;
 
 /**************************** libft ****************************/
@@ -247,6 +260,7 @@ bool	checkcolorec(t_data *data, char **elements);
 int		countlinesfirstmap(t_data *data);
 int		countlines(char *mapname);
 int		countargs(char *firstline);
+int		countlinessecondmap(t_data *data);
 
 /**************************** parser.c ****************************/
 bool	checkkeys(t_data *data, char **elements);
@@ -263,12 +277,20 @@ bool	dividingmap(t_data *data);
 
 /**************************** checkchar.c ****************************/
 bool	checkrightleftchar(char *line);
-bool	checkbottomtopchar(char **line);
+bool	checkbottomtopchar(char **line, t_data *data);
 bool	checkchar(t_data *data);
 
 /**************************** parsetwopartsofmap.c ****************************/
 bool	parsefirstofmap(t_data *data);
 bool	parsesecondofmap(t_data *data);
+
+/************************** generate3dprojection.c **************************/
+int		createcolorceil(t_data *data);
+int		createcolorfloor(t_data *data);
+void	generate3dprojection(t_data *data);
+
+/************************** other.c **************************/
+void	createtextureimg(t_data *data);
 
 /**************************** raycasting ****************************/
 void	initialisation(t_data *data);
@@ -319,4 +341,5 @@ void	img_ea(t_data *data, int i, int j, int x);
 int		calc_x(t_data *data, int i);
 int		handle_mouse(int x, int y, t_data *data);
 void	unit_mlx_p(t_data *data);
+
 #endif

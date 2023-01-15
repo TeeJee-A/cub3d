@@ -6,7 +6,7 @@
 #    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 23:19:39 by ataji             #+#    #+#              #
-#    Updated: 2023/01/11 23:32:10 by ataji            ###   ########.fr        #
+#    Updated: 2023/01/15 13:44:39 by ataji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRCS = libft/ft_split.c\
 	raycasting/render_utils.c\
 	raycasting/render.c\
 	raycasting/utils.c\
+	raycasting/generate3dprojection.c\
 	main.c
 	
 OBJS = $(SRCS:%.c=%.o)
@@ -55,9 +56,9 @@ $(NAME) : $(OBJS)
 	@$(CC) $(CFLAGS) -c $< -o $@ -fsanitize=address -g
 
 clean :
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean :
-	$(RM) $(OBJS) $(NAME)
+	@$(RM) $(OBJS) $(NAME)
 
 re : fclean all

@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:28:59 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/14 15:05:17 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/15 13:43:28 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,52 +78,6 @@ void	render_rays(t_data *data)
 			j++;
 		}
 		ray_angle += data->fov_angle / data->num_rays;
-	}
-}
-
-int	createcolorceil(t_data *data)
-{
-	return ((ft_atoi(data->ceil[0]) << 16) | (ft_atoi(data->ceil[1]) << 8)
-		| ft_atoi(data->ceil[2]));
-}
-
-int	createcolorfloor(t_data *data)
-{
-	return ((ft_atoi(data->floor[0]) << 16) | (ft_atoi(data->floor[1]) << 8)
-		| ft_atoi(data->floor[2]));
-}
-
-void	generate3dprojection(t_data *data)
-{
-	int	i;
-	int	j;
-
-	i = -1;
-	while (++i < data->num_rays)
-	{
-		data->distanceprojplane = (WIDTH / 2) / tan(data->fov_angle / 2);
-		data->projectionwallheight = (double)(IMG_SIZE / data->rays[i].cor) * data->distanceprojplane;
-		data->wallstripheight = data->projectionwallheight;
-		data->walltoppixel = (HEIGHT / 2) - (data->wallstripheight / 2);
-		if (data->walltoppixel < 0)
-			data->walltoppixel = 0;
-		data->wallbottompixel = (HEIGHT / 2) + (data->wallstripheight / 2);
-		if (data->wallbottompixel > HEIGHT)
-			data->wallbottompixel = HEIGHT;
-		j = -1;
-		while (++j < data->walltoppixel)
-			my_mlx_pixel_put_map(data, i, j, createcolorceil(data));
-		j = data->walltoppixel - 1;
-		while (++j < data->wallbottompixel)
-		{
-			if (data->rays[i].ver)
-				my_mlx_pixel_put_map(data, i, j, 0xEEEEEE);
-			else
-				my_mlx_pixel_put_map(data, i, j, 0xCCCCCC);
-		}
-		j = data->wallbottompixel - 1;
-		while (++j < HEIGHT)
-			my_mlx_pixel_put_map(data, i, j, createcolorfloor(data));
 	}
 }
 

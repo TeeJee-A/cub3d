@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 10:32:08 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/11 18:00:15 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/14 23:00:48 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*returnline_aa(char *str, size_t len)
 	int		i;
 
 	i = 0;
-	ret = (char *)malloc(ft_strlen(str) + len);
+	ret = (char *)malloc(ft_strlen(str) + len + 1);
 	if (!ret)
 		return (NULL);
 	while (str[i])
@@ -44,7 +44,11 @@ void	addspaces(t_data *data)
 {
 	size_t	i;
 	size_t	len;
+	char	**saver;
 
+	saver = (char **)malloc(sizeof(char *) * data->countsecondlines + 1);
+	if (!saver)
+		return ;
 	i = 0;
 	while (data->secondlines[i])
 	{

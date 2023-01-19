@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mini_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aanjaimi <aanjaimi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:26:55 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/10 19:59:17 by aanjaimi         ###   ########.fr       */
+/*   Updated: 2023/01/19 03:32:44 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,5 @@ void	ft_reset(t_data *data, char dir)
 		data->ply.turn_dir = 0;
 	else if (dir == 124)
 		data->ply.turn_dir = 0;
-	render(data);
+	// render(data);
 }

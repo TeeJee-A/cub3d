@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:24:28 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/12 12:54:55 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 16:38:22 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	my_mlx_pixel_put_map(t_data *data, int x, int y, int color)
 
 void	loop_mlx(t_data *data)
 {
-	render(data);
 	mlx_hook(data->var.win, 2, 1L, &handle_keypress, data);
 	mlx_hook(data->var.win, 3, 1L, &handle_keyrelease, data);
 	mlx_hook(data->var.win, 17, 1L, &handle_btnrealease, data);
 	mlx_hook(data->var.win, 6, 1L, &handle_mouse, data);
+	mlx_loop_hook(data->var.mlx, &render, data);
 	mlx_loop(data->var.mlx);
 }

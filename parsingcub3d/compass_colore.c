@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 12:55:37 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/12 13:49:27 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 16:29:43 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,35 +48,6 @@ bool	checkfile(char **elements)
 		return (false);
 	}
 	close (fd);
-	return (true);
-}
-
-bool	checktexture(t_data *data, char **elements)
-{
-	if (!ft_strcmp(elements[0], "WE"))
-	{
-		if (checkfile(elements) == false)
-			return (false);
-		data->we++;
-	}
-	if (!ft_strcmp(elements[0], "SO"))
-	{
-		if (checkfile(elements) == false)
-			return (false);
-		data->so++;
-	}
-	if (!ft_strcmp(elements[0], "NO"))
-	{
-		if (checkfile(elements) == false)
-			return (false);
-		data->no++;
-	}
-	if (!ft_strcmp(elements[0], "EA"))
-	{
-		if (checkfile(elements) == false)
-			return (false);
-		data->ea++;
-	}
 	return (true);
 }
 

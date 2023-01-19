@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:28:23 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/14 13:00:24 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 22:04:33 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,18 +89,16 @@ int	render_map(t_data *data)
 		while (data->secondlines[data->var.i][++data->var.j])
 		{
 			if (data->secondlines[data->var.i][data->var.j] == '1')
-				draw_case(data, 0xFF0000);
-			else if (data->secondlines[data->var.i][data->var.j] == '0')
-				ft_put_mini(data, data->var.i, data->var.j, 0xFFFFFF);
-			else if (data->secondlines[data->var.i][data->var.j] == ' ')
-				ft_put_mini(data, data->var.i, data->var.j, 0xFF000000);
-			else
+				draw_case(data, 0x4F4F4F);
+			else if (is_player(data->secondlines[data->var.i][data->var.j]))
 			{
 				if (data->ply.x1 == -1 && data->ply.y1 == -1)
 					render_player(data, SIZE_MINI / 8);
 				else
-					ft_put_mini(data, data->var.i, data->var.j, 0xFFFFFF);
+					ft_put_mini(data, data->var.i, data->var.j, 0xFF000000);
 			}
+			else
+				ft_put_mini(data, data->var.i, data->var.j, 0xFF000000);
 		}
 	}
 	return (0);

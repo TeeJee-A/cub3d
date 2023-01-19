@@ -6,11 +6,18 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:33:29 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/14 11:53:13 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 22:10:27 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsingcub3d/cub3d.h"
+
+int	is_player(char c)
+{
+	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
+		return (1);
+	return (0);
+}
 
 void	dda(t_data *data, double x, double y)
 {
@@ -46,8 +53,8 @@ void	initialisation(t_data *data)
 	data->ply.x1 = -1;
 	data->ply.y1 = -1;
 	data->fov_angle = (60 * (M_PI / 180));
-	data->ply.walk_speed = 10.0;
-	data->ply.turn_speed = (10 * (M_PI / 180));
+	data->ply.walk_speed = 5.0;
+	data->ply.turn_speed = (5 * (M_PI / 180));
 	data->ply.rotation_angle = 0;
 	data->ply.ray_angle = data->ply.rotation_angle - (data->fov_angle / 2);
 	data->ply.turn_dir = 0;
@@ -55,7 +62,7 @@ void	initialisation(t_data *data)
 	data->ply.side_dir = 0;
 	data->ply.color = 0x00FF00;
 	data->ray_color = 0xFFFF00;
-	data->square_color = 0x0000FF;
+	data->square_color = 0xFFFF00;
 	data->wall_color = 0x00FF00;
 	data->ray.is_down = 0;
 	data->ray.is_up = 0;

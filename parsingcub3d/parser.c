@@ -6,23 +6,11 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 11:54:51 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/15 16:26:53 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 21:25:25 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	settexture(t_data *data, char **elements)
-{
-	if (!ft_strcmp(elements[0], "EA"))
-		data->texture[EA] = ft_strdup(elements[1]);
-	else if (!ft_strcmp(elements[0], "WE"))
-		data->texture[WE] = ft_strdup(elements[1]);
-	else if (!ft_strcmp(elements[0], "SO"))
-		data->texture[SO] = ft_strdup(elements[1]);
-	else if (!ft_strcmp(elements[0], "NO"))
-		data->texture[NO] = ft_strdup(elements[1]);
-}
 
 bool	checkkeys(t_data *data, char **elements)
 {

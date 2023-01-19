@@ -6,44 +6,42 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:28:59 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/15 13:43:28 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 04:46:32 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../parsingcub3d/cub3d.h"
 
-void	set_rays_hor(t_data *data, int i, int j, double ray_angle)
+void	set_rays_hor(t_data *data, int i, double ray_angle)
 {
 	dda(data, data->ray.next_hor_touch_x, data->ray.next_hor_touch_y);
-	data->rays[j].x = data->ray.next_hor_touch_x;
-	data->rays[j].y = data->ray.next_hor_touch_y;
-	data->rays[j].ang = ray_angle;
-	data->rays[j].up = data->ray.is_up;
-	data->rays[j].down = data->ray.is_down;
-	data->rays[j].right = data->ray.is_right;
-	data->rays[j].left = data->ray.is_left;
-	data->rays[j].dis = calcule_dis(data->ply.x1, data->ply.y1, \
-	data->rays[j].x, data->rays[j].y);
+	data->rays[i].x = data->ray.next_hor_touch_x;
+	data->rays[i].y = data->ray.next_hor_touch_y;
+	data->rays[i].ang = ray_angle;
+	data->rays[i].up = data->ray.is_up;
+	data->rays[i].down = data->ray.is_down;
+	data->rays[i].right = data->ray.is_right;
+	data->rays[i].left = data->ray.is_left;
+	data->rays[i].dis = data->hor_dis;
 	data->rays[i].cor = data->rays[i].dis * \
 	cos(ray_angle - data->ply.rotation_angle);
-	data->rays[j].ver = 0;
+	data->rays[i].ver = 0;
 }
 
-void	set_rays_ver(t_data *data, int i, int j, double ray_angle)
+void	set_rays_ver(t_data *data, int i, double ray_angle)
 {
 	dda(data, data->ray.next_ver_touch_x, data->ray.next_ver_touch_y);
-	data->rays[j].x = data->ray.next_ver_touch_x;
-	data->rays[j].y = data->ray.next_ver_touch_y;
-	data->rays[j].ang = ray_angle;
-	data->rays[j].up = data->ray.is_up;
-	data->rays[j].down = data->ray.is_down;
-	data->rays[j].right = data->ray.is_right;
-	data->rays[j].left = data->ray.is_left;
-	data->rays[j].dis = calcule_dis(data->ply.x1, data->ply.y1, \
-	data->rays[j].x, data->rays[j].y);
+	data->rays[i].x = data->ray.next_ver_touch_x;
+	data->rays[i].y = data->ray.next_ver_touch_y;
+	data->rays[i].ang = ray_angle;
+	data->rays[i].up = data->ray.is_up;
+	data->rays[i].down = data->ray.is_down;
+	data->rays[i].right = data->ray.is_right;
+	data->rays[i].left = data->ray.is_left;
+	data->rays[i].dis = data->ver_dis;
 	data->rays[i].cor = data->rays[i].dis * \
 	cos(ray_angle - data->ply.rotation_angle);
-	data->rays[j].ver = 1;
+	data->rays[i].ver = 1;
 }
 
 void	ray_cast(t_data *data, double ray_angle)
@@ -58,25 +56,17 @@ void	render_rays(t_data *data)
 {
 	double	ray_angle;
 	int		i;
-	int		j;
 
 	i = -1;
-	j = 0;
 	ray_angle = data->ply.rotation_angle - (data->fov_angle / 2);
 	while (++i < data->num_rays)
 	{
 		ray_angle = mod(ray_angle, (2 * M_PI));
 		ray_cast(data, ray_angle);
 		if (data->hor_dis < data->ver_dis)
-		{
-			set_rays_hor(data, i, j, ray_angle);
-			j++;
-		}
+			set_rays_hor(data, i, ray_angle);
 		else
-		{
-			set_rays_ver(data, i, j, ray_angle);
-			j++;
-		}
+			set_rays_ver(data, i, ray_angle);
 		ray_angle += data->fov_angle / data->num_rays;
 	}
 }

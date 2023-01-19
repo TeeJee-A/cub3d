@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 15:28:32 by ataji             #+#    #+#             */
-/*   Updated: 2023/01/15 20:46:26 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 21:26:53 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 # define BIGERR "ERROR : Attention don't have first part of map or\
  second part of map\n"
 
-# define IMG_SIZE 10
+# define IMG_SIZE 9
 # define SIZE_MINI 10
 # define WALL_STR_WIDTH 1
 # define WIDTH 1920
@@ -123,6 +123,7 @@ typedef struct s_img
 {
 	void	*img;
 	char	*addr;
+	int		*add;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
@@ -268,7 +269,6 @@ bool	checkplayerstart(t_data *data);
 bool	parsecharsecondmap(t_data *data);
 bool	parsemap(t_data *data);
 bool	allparsing(int ac, char **av, t_data *data);
-// int		countkeys(char *elements);
 
 /**************************** parser.c ****************************/
 void	first(t_data *data);		
@@ -285,12 +285,22 @@ bool	parsefirstofmap(t_data *data);
 bool	parsesecondofmap(t_data *data);
 
 /************************** generate3dprojection.c **************************/
-int		createcolorceil(t_data *data);
-int		createcolorfloor(t_data *data);
 void	generate3dprojection(t_data *data);
 
-/************************** other.c **************************/
+/************************** settexture.c **************************/
 void	createtextureimg(t_data *data);
+bool	checktexture(t_data *data, char **elements);
+void	settexture(t_data *data, char **elements);
+
+/************************** calculatexy.c **************************/
+int		calculatex(t_data *data, int i, int direction);
+int		calculatey(t_data *data, int j, int direction);
+
+/************************** colors.c **************************/
+int		createcolorceil(t_data *data);
+int		createcolorfloor(t_data *data);
+int		returncolor(t_data *data, int direction, int j);
+int		setcolor(t_data *data, int i, int j);
 
 /**************************** raycasting ****************************/
 void	initialisation(t_data *data);
@@ -341,5 +351,6 @@ void	img_ea(t_data *data, int i, int j, int x);
 int		calc_x(t_data *data, int i);
 int		handle_mouse(int x, int y, t_data *data);
 void	unit_mlx_p(t_data *data);
+int		is_player(char c);
 
 #endif

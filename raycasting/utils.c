@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:30:41 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/11 15:08:56 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/19 18:09:53 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ double	mod(double x, double y)
 
 void	render_player(t_data *data, int r)
 {
+	ft_put_mini(data, data->var.i, data->var.j, 0xFF000000);
 	data->ply.x1 = data->var.i * SIZE_MINI + SIZE_MINI / 2;
 	data->ply.y1 = data->var.j * SIZE_MINI + SIZE_MINI / 2;
 	draw_circle(data, data->ply.x1, data->ply.y1, r);

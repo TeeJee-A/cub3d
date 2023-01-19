@@ -6,14 +6,14 @@
 #    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 23:19:39 by ataji             #+#    #+#              #
-#    Updated: 2023/01/15 13:44:39 by ataji            ###   ########.fr        #
+#    Updated: 2023/01/20 00:21:14 by ataji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3d
 INC = cub3d/cub3d.h
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Ofast
 SRCS = libft/ft_split.c\
 	libft/ft_splitnewline.c\
 	libft/ft_strcmp.c\
@@ -43,17 +43,20 @@ SRCS = libft/ft_split.c\
 	raycasting/render.c\
 	raycasting/utils.c\
 	raycasting/generate3dprojection.c\
+	raycasting/settexture.c\
+	raycasting/colors.c\
+	raycasting/calculatexy.c\
 	main.c
 	
 OBJS = $(SRCS:%.c=%.o)
 
-all : $(NAME) clean
+all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -o $(NAME) $^ -fsanitize=address -g
+	@$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit -Ofast -o $(NAME) $^ -fsanitize=address -g
 
 %.o : %.c $(INC)
-	@$(CC) $(CFLAGS) -c $< -o $@ -fsanitize=address -g
+	@$(CC) $(CFLAGS) -c $< -Ofast -o $@ -fsanitize=address -g
 
 clean :
 	@$(RM) $(OBJS)

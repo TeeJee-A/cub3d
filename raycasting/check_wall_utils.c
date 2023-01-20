@@ -6,7 +6,7 @@
 /*   By: ataji <ataji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 19:33:29 by aanjaimi          #+#    #+#             */
-/*   Updated: 2023/01/19 22:10:27 by ataji            ###   ########.fr       */
+/*   Updated: 2023/01/20 16:49:36 by ataji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	initialisation(t_data *data)
 	data->ply.x1 = -1;
 	data->ply.y1 = -1;
 	data->fov_angle = (60 * (M_PI / 180));
-	data->ply.walk_speed = 5.0;
-	data->ply.turn_speed = (5 * (M_PI / 180));
+	data->ply.walk_speed = 2.0;
+	data->ply.turn_speed = (3 * (M_PI / 180));
 	data->ply.rotation_angle = 0;
 	data->ply.ray_angle = data->ply.rotation_angle - (data->fov_angle / 2);
 	data->ply.turn_dir = 0;

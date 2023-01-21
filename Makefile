@@ -6,11 +6,11 @@
 #    By: ataji <ataji@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/04 23:19:39 by ataji             #+#    #+#              #
-#    Updated: 2023/01/20 00:21:14 by ataji            ###   ########.fr        #
+#    Updated: 2023/01/21 15:31:34 by ataji            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = cub3d
+NAME = cub3D
 INC = cub3d/cub3d.h
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Ofast
